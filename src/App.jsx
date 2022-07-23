@@ -1,17 +1,22 @@
 import { Container } from "react-bootstrap";
 import Forms from "./components/Forms";
+import ListDrinks from "./components/ListDrinks";
 import { CategoriesProvider } from "./context/CategoriesProvider";
+import { DrinksProvider } from "./context/DrinksProvider";
 
 function App() {
   return (
     <CategoriesProvider>
-      <header className="py-5">
-        <h1>Find Your Cocktail</h1>
-      </header>
+      <DrinksProvider>
+        <header className="py-5">
+          <h1>Find Your Cocktail</h1>
+        </header>
 
-      <Container className="mt-4">
-        <Forms />
-      </Container>
+        <Container className="mt-4">
+          <Forms />
+          <ListDrinks />
+        </Container>
+      </DrinksProvider>
     </CategoriesProvider>
   );
 }
